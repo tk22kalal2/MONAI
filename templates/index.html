@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Image Generator</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Generate Medical Image</h1>
+    <form method="POST">
+        <input type="text" name="text" placeholder="e.g., Brain MRI, Chest X-Ray" required>
+        <button type="submit">Generate</button>
+    </form>
+    
+    <div id="result">
+        {% if request.method == 'POST' %}
+            <h3>Generated Image:</h3>
+            <img src="{{ url_for('home') }}" alt="Medical Image">
+        {% endif %}
+    </div>
+</body>
+</html>
